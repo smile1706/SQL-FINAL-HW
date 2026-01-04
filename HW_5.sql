@@ -36,7 +36,7 @@ create table mutallapov_da.employees (
 );
 
 create table mutallapov_da.orders (
-	card_num smallint default nextval('mutallapov_da.seq_readers_card_num'),
+	card_num smallint NOT NULL,
 	barcode_num bigint,
 	issue_date date,
 	issuer_id smallint
@@ -113,4 +113,3 @@ inner join mutallapov_da.orders o
 inner join mutallapov_da.readers r 
 	on o.card_num = r.card_num 
 order by b.book_name asc;
-
